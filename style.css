@@ -1,0 +1,54 @@
+
+body {
+    font-family:'Times New Roman',Times, serif,sans-serif;
+    background-color:rgb(189,227,241);
+    text-align:center;
+    padding:50px;
+}
+
+h1 {
+    text-align:center;
+color:darkblue;
+}
+
+table {
+    width:auto;
+    margin:auto;
+    border-collapse:collapse;
+}
+
+
+td {
+    padding:10px 1px;
+    vertical-align:center;
+}
+
+
+.button {
+    display:inline-block ;
+    background-color:white;
+    padding:10px 10px;
+    border:2px;
+    border-radius:5px;
+    cursor:pointer;
+    font-size:15px;
+    text-align:center;
+    
+}
+.button:hover{
+    background-color: rgb(110, 197, 110);
+}
+button[type="submit"]{
+    background-color: white;
+}
+button[type="reset"]{
+    background-color: white;
+}
+button[type="submit"]:hover{
+    background-color: rgb(188, 230, 188);
+    color:green;
+}
+button[type="reset"]:hover{
+    background-color: rgb(241, 137, 137);
+    color:red;
+}

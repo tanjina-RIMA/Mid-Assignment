@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <title>Employee List</title>
+            <link rel="stylesheet" href="style.css">
+<style>
+    table,th,td {
+        border:2px solid black;
+        border-collapse:collapse;
+      }
+      th,td{
+        padding:10px;
+      }
+</style>
+    </head>
+    <body>
+<h1>Employee List</h1>
+<table id="emptable">
+    <tr>
+<th>ID</th>
+<th>Name</th>
+<th>Email</th>
+<th>Department</th>
+<th>Joining Date</th>
+<th>Gender</th>
+<th>Employee Type</th>
+
+    </tr>
+    <tr>
+        <td>EMP101</td>
+    <td>Ruma Chowdury</td>
+    <td>ruma@gmail.com</td>
+    <td>IT</td>
+    <td>08/09/2019</td>
+    <td>Female</td>
+    <td>Full-Time</td>
+    <td><button onclick="editRow(this)">Edit</button> <button onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    <tr>
+        <td>EMP191</td>
+    <td>Ali Khan</td>
+    <td>ali091@gmail.com</td>
+    <td>Sales</td>
+    <td>15/02/2021</td>
+    <td>Male</td>
+    <td>Full-Time</td>
+    <td><button onclick="editRow(this)">Edit</button> <button onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    </tr>
+    <tr>
+        <td>EMP144</td>
+    <td>Riya hossain</td>
+    <td>ria98@gmail.com</td>
+    <td>HR</td>
+    <td>07/11/2020</td>
+    <td>Female</td>
+    <td>Full-Time</td>
+    <td><button onclick="editRow(this)">Edit</button> <button onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    </tr>
+    <tr>
+        <td>EMP129</td>
+    <td>Tanjina Akter</td>
+    <td>tanjinaakter@gmail.com</td>
+    <td>IT</td>
+    <td>31/09/2021</td>
+    <td>Female</td>
+    <td>Full-Time</td>
+    <td><button onclick="editRow(this)">Edit</button> <button onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    </tr>
+    <tr>
+        <td>EMP198</td>
+    <td>Sayed Sheikh </td>
+    <td>sheikh@gmail.com</td>
+    <td>Marketing</td>
+    <td>02/02/2019</td>
+    <td>Male</td>
+    <td>Full-Time</td>
+    <td><button onclick="editRow(this)">Edit</button> <button onclick="deleteRow(this)">Delete</button></td>
+    </tr>
+    </tr>
+</table>
+<script>
+    function deleteRow(button) {
+        let row=button.parentElement.parentElement;
+        row.remove();
+    }
+    function editRow(button) {
+        let row =button.parentElement.parentElement;
+        let cells=row.querySelectorAll("td");
+
+        if(button.textContent==="Edit") {
+            for (let i=0;i<cells.length-1;i++) 
+            {
+                let currentText = cells[i].innerText;
+                cells[i].innerHTML ="<input type='text' value='" + currentText + "'>";
+            }
+            button.textContent ="Save";
+        } 
+        else {
+            for (let i=0; i<cells.length-1;i++) {
+                let newValue=cells[i].querySelector("input").value;
+                cells[i].innerText=newValue;
+            }
+            button.textContent = "Edit";
+        }
+    }
+</script>
